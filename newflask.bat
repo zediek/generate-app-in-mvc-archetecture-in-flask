@@ -11,6 +11,7 @@ echo #########################################################################
 set /p projectname="Project Name>"
 mkdir %projectname%"_app"
 cd %projectname%"_app"
+pip install virtualenv
 virtualenv env
 cd env/Scripts
 call pip3.exe install flask

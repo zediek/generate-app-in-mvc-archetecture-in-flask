@@ -6,7 +6,6 @@ echo # author      : zediek villamil                                         #
 echo # supported os: windows 10, i don't know if it works in windows 7 and 8 #
 echo # requirements: python 3.7.2                                            #
 echo #               pip3 or pip not pip2 if not included in python3         #
-echo #               vertualenv in pip install                               #
 echo #########################################################################
 set /p projectname="Project Name>"
 mkdir %projectname%"_app"

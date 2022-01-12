@@ -119,7 +119,10 @@ echo    ^</head^> >> index.html
 echo    ^<body class=^"d-flex flex-column h-100^"^> >> index.html
 echo        ^<div class=^"container^"^> >> index.html
 echo            ^<div class=^"card^"^> >> index.html
-echo                ^<h1 class=^"card-header^"^>this is %projectname% page^</h1^> >> index.html
+echo                ^<h1 class=^"card-header^"^>Welcome To Zediek's NewFlask: Generate App in MVC Archetecture in Flask^</h1^> >> index.html
+echo                ^<div class=^"card-body^"^> >>index.html
+echo                    ^<p class=^"card-text^"^>This is %projectname% page is generated from NewFlask created by Zediek Villamil^</p^> >> index.html
+echo                ^</div^> >> index.html
 echo            ^</div^> >> index.html
 echo        ^</div^> >> index.html
 echo        ^<footer class=^"footer mt-auto py-3 bg-light text-center^" style=^"margin-top: 5%;^"^> >> index.html

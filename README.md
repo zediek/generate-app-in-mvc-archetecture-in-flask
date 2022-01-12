@@ -4,6 +4,7 @@
 Generate web app in MVC Archetecture in Flask.
 
 **Requirements**  
+- Windows 10
 - Pip 20.3.3 Python 3.7.2 or later
 - pip3 or pip not pip2 if not included in python3
 - vertualenv in pip install

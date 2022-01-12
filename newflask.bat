@@ -129,6 +129,7 @@ echo                    ^&#9400; %year% %owner%. All Rights Reserved. >> index.h
 echo                ^</span^> >> index.html
 echo            ^</div^> >> index.html
 echo        ^</footer^> >> index.html
+echo        ^<script src=^"{{ url_for(^'page.static^', filename = ^'node_modules/bootstrap/dist/js/bootstrap.min.js^') }}^"^>^</script^> >> index.html
 echo    ^</body^> >> index.html
 echo ^</html^> >> index.html
 echo index.html created

@@ -15,6 +15,11 @@ Generate web app in MVC Archetecture in Flask.
         ```
         https://www.python.org/
         ```
+- Install the Yarn
+    + Heres the link:
+        ```
+        https://github.com/yarnpkg/yarn/releases
+        ```
 - To add to Environment Variable PATH
     + Right click "This PC"
     + Lift click "Properties"

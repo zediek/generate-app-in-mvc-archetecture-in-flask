@@ -1,7 +1,7 @@
 @echo off
 echo #########################################################################
 echo # title       : NewFlask: Generate App in MVC Archetecture in Flask     #
-echo # version     : 0.3.0                                                   #
+echo # version     : 0.4.0                                                   #
 echo # author      : zediek villamil                                         #
 echo # supported os: Windows 10, i don't know if it works in windows 7 and 8 #
 echo # requirements: Pip 20.3.3 Python 3.7.2                                 #

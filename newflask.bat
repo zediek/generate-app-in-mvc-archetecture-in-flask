@@ -7,6 +7,7 @@ echo # supported os: Windows 10, i don't know if it works in windows 7 and 8 #
 echo # requirements: Pip 20.3.3 Python 3.7.2                                 #
 echo #               pip3 or pip not pip2 if not included in python3         #
 echo #               vertualenv in pip install                               #
+echo #               yarn to install bootstrap                               #
 echo #########################################################################
 set /p projectname="Project Name>"
 set /p owner="Owner>"

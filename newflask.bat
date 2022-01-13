@@ -1,7 +1,7 @@
 @echo off
 echo #########################################################################
 echo # title       : NewFlask: Generate App in MVC Archetecture in Flask     #
-echo # version     : 0.4.0                                                   #
+echo # version     : 0.5.0                                                   #
 echo # author      : zediek villamil                                         #
 echo # supported os: Windows 10, i don't know if it works in windows 7 and 8 #
 echo # requirements: Pip 20.3.3 Python 3.7.2                                 #
@@ -64,6 +64,47 @@ echo # SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://[mysqluser]:[mysqlpass]@locah
 echo # SQLALCHEMY_TRACK_MODIFICATIONS = False >> config.py
 echo SECRET_KEY = str(os.urandom(24).hex()) >> config.py
 echo config.py created
+echo creating zedgen.py....
+echo import argparse >> zedgen.py
+echo import platform >> zedgen.py
+echo import os >> zedgen.py
+echo module_name = ^"ZedGen: Flask's generate pages or models.^" >> zedgen.py
+echo author = ^"Zediek^" >> zedgen.py
+echo __version__ = ^"0.1.0^" >> zedgen.py
+echo version_string = f^"%(prog)s {__version__}\n^" + f^"Python:  {platform.python_version()}^" >> zedgen.py
+echo parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,description=f^"{module_name} (Version {__version__}) By: {author}^") >> zedgen.py
+echo parser.add_argument(^"--version^", ^"-v^", action=^"version^",  version=version_string,help=^"Display version information and dependencies^") >> zedgen.py
+echo parser.add_argument(^"--page^", ^"-p^", action=^"store^", type=str, required=False, help=^"generate controller and view file^") >> zedgen.py
+echo parser.add_argument(^"--model^", ^"-m^", action=^"store^", type=str, required=False, help=^"generate model file^") >> zedgen.py
+echo args = parser.parse_args() >> zedgen.py
+echo if args.page != None: >> zedgen.py
+echo 	file = open(f^"src/controllers/{args.page}_controller.py^",'a') >> zedgen.py
+echo 	string = ^"from flask import Flask, render_template\n^" >> zedgen.py
+echo 	string += ^"from src.app import app\n^" >> zedgen.py
+echo 	string += f^"@app.route('/{args.page}')\n^"  >> zedgen.py 
+echo 	string += f^"def {args.page}():\n^" >> zedgen.py
+echo 	string += f^"	return render_template('{args.page}/index.html')\n^" >> zedgen.py
+echo 	file.write(string) >> zedgen.py
+echo 	file.close() >> zedgen.py
+echo 	if not os.path.exists(f^"src/views/templates/{args.page}^"): >> zedgen.py
+echo 		os.makedirs(f^"src/views/templates/{args.page}^") >> zedgen.py
+echo 	file = open(f^"src/views/templates/{args.page}/index.html^",'a') >> zedgen.py
+echo 	string = f^"This is {args.page} page.^" >> zedgen.py
+echo 	file.write(string) >> zedgen.py
+echo 	file.close() >> zedgen.py
+echo 	file = open(f^"src/app.py^",'a') >> zedgen.py
+echo 	string = f^"from src.controllers import {args.page}_controller\n^" >> zedgen.py
+echo 	file.write(string)  >> zedgen.py
+echo 	file.close() >> zedgen.py
+echo if args.model != None: >> zedgen.py
+echo 	file = open(f^"src/models/{args.model}_model.py^",'a') >> zedgen.py
+echo 	string = ^"from src.app import db\n^" >> zedgen.py
+echo 	string += f^"class {str(args.model).capitalize()}(db.Model):\n^"  >> zedgen.py 
+echo 	string += f^"	def __init__(self):\n^" >> zedgen.py
+echo 	string += f^"		pass\n^" >> zedgen.py
+echo 	file.write(string) >> zedgen.py
+echo 	file.close() >> zedgen.py
+echo zedgen.py created
 mkdir src
 cd src
 echo creating __init__.py....

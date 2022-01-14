@@ -37,3 +37,10 @@ Generate web app in MVC Archetecture in Flask.
         ```
         newflask
         ```
+
+- ZedGen feature is added
+    + zedgen.py is located in project name directory
+    + to know about more, run command
+        ```
+        python zedgen.py --help
+        ```

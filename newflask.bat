@@ -1,7 +1,7 @@
 @echo off
 echo #########################################################################
 echo # title       : NewFlask: Generate App in MVC Archetecture in Flask     #
-echo # version     : 0.5.0                                                   #
+echo # version     : 0.5.1                                                   #
 echo # author      : zediek villamil                                         #
 echo # supported os: Windows 10, i don't know if it works in windows 7 and 8 #
 echo # requirements: Pip 20.3.3 Python 3.7.2                                 #
@@ -68,7 +68,7 @@ echo creating zedgen.py....
 echo import argparse >> zedgen.py
 echo import platform >> zedgen.py
 echo import os >> zedgen.py
-echo module_name = ^"ZedGen: Flask's generate pages or models.^" >> zedgen.py
+echo module_name = ^"ZedGen: Flask's generate pages, models or services.^" >> zedgen.py
 echo author = ^"Zediek^" >> zedgen.py
 echo __version__ = ^"0.1.0^" >> zedgen.py
 echo version_string = f^"%(prog)s {__version__}\n^" + f^"Python:  {platform.python_version()}^" >> zedgen.py
@@ -76,6 +76,7 @@ echo parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHel
 echo parser.add_argument(^"--version^", ^"-v^", action=^"version^",  version=version_string,help=^"Display version information and dependencies^") >> zedgen.py
 echo parser.add_argument(^"--page^", ^"-p^", action=^"store^", type=str, required=False, help=^"generate controller and view file^") >> zedgen.py
 echo parser.add_argument(^"--model^", ^"-m^", action=^"store^", type=str, required=False, help=^"generate model file^") >> zedgen.py
+echo parser.add_argument(^"--service^", ^"-s^", action=^"store^", type=str, required=False, help=^"generate service file^") >> zedgen.py
 echo args = parser.parse_args() >> zedgen.py
 echo if args.page != None: >> zedgen.py
 echo 	file = open(f^"src/controllers/{args.page}_controller.py^",'a') >> zedgen.py
@@ -102,6 +103,14 @@ echo 	string = ^"from src.app import db\n^" >> zedgen.py
 echo 	string += f^"class {str(args.model).capitalize()}(db.Model):\n^"  >> zedgen.py 
 echo 	string += f^"	def __init__(self):\n^" >> zedgen.py
 echo 	string += f^"		pass\n^" >> zedgen.py
+echo 	file.write(string) >> zedgen.py
+echo 	file.close() >> zedgen.py
+echo if args.service != None: >> zedgen.py
+echo 	if not os.path.exists(f^"src/services^"): >> zedgen.py
+echo 		os.makedirs(f^"src/services^") >> zedgen.py
+echo 	file = open(f^"src/services/{args.service}_service.py^",'a') >> zedgen.py
+echo 	string = f^"class {str(args.service).capitalize()}:\n^" >> zedgen.py
+echo 	string += f^"	pass\n^" >> zedgen.py
 echo 	file.write(string) >> zedgen.py
 echo 	file.close() >> zedgen.py
 echo zedgen.py created

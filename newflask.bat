@@ -39,6 +39,7 @@ echo flask_socketio >> requirements.txt
 echo PyMySQL >> requirements.txt
 echo validate_email >> requirements.txt
 echo werkzeug >> requirements.txt
+echo waitress >> requirements.txt
 echo requirements.txt created
 echo creating run.py....
 echo # Run a test server >> run.py

@@ -1,7 +1,7 @@
 # Welcome to NewFlask: Generate App in MVC Archetecture in Flask
 
 **Description**  
-Generate web app in MVC Archetecture in Flask.
+Generate web app in MVC Architecture in Flask.
 
 **Requirements**  
 - Windows 10

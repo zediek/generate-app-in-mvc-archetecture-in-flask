@@ -1,4 +1,4 @@
-# Welcome to NewFlask: Generate App in MVC Archetecture in Flask
+# Welcome to NewFlask: Generate App in MVC Architecture in Flask
 
 **Description**  
 Generate web app in MVC Architecture in Flask.
@@ -10,7 +10,7 @@ Generate web app in MVC Architecture in Flask.
 - vertualenv in pip install
 - yarn to install bootstrap and etc.
 
-**Steps to setup NewFlask: Generate App in MVC Archetecture in Flask**
+**Steps to setup NewFlask: Generate App in MVC Architecture in Flask**
 - First, to install Python 3
     + Heres the link:
         ```

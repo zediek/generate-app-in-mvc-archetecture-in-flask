@@ -1,6 +1,6 @@
 @echo off
 echo #########################################################################
-echo # title       : NewFlask: Generate App in MVC Archetecture in Flask     #
+echo # title       : NewFlask: Generate App in MVC Architecture in Flask     #
 echo # version     : 0.5.1                                                   #
 echo # author      : zediek villamil                                         #
 echo # supported os: Windows 10, i don't know if it works in windows 7 and 8 #

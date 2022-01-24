@@ -10,7 +10,6 @@ echo #               vertualenv in pip install                               #
 echo #               yarn to install bootstrap                               #
 echo #########################################################################
 set /p projectname="Project Name>"
-set /p description="Description>"
 set /p author="Author>"
 set year=%date:~6,4%
 mkdir %projectname%
@@ -47,11 +46,11 @@ echo # Run a test server >> run.py
 echo from flask import Flask >> run.py
 echo from src.app import app >> run.py
 echo debug_status = True >> run.py
-echo module_name = ^"%projectname%: %description%^" >>run.py
+echo project_name = ^"%projectname%^" >>run.py
 echo author = ^"%author%^" >> run.py
 echo __version__ = ^"v0.0.0^" >> run.py
 echo if __name__ == '__main__': >> run.py
-echo print(f^"Welcome to {module_name}{__version__}^") >> run.py
+echo print(f^"Welcome to {project_name}{__version__}^") >> run.py
 echo print(^"(c) %year% %author%. All Rights Reserved.^") run.py
 echo 	import logging >> run.py
 echo 	logging.basicConfig(filename='logs.log',level=logging.DEBUG) >> run.py

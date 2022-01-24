@@ -10,7 +10,8 @@ echo #               vertualenv in pip install                               #
 echo #               yarn to install bootstrap                               #
 echo #########################################################################
 set /p projectname="Project Name>"
-set /p owner="Owner>"
+set /p description="Description>"
+set /p author="Author>"
 set year=%date:~6,4%
 mkdir %projectname%
 cd %projectname%
@@ -46,7 +47,12 @@ echo # Run a test server >> run.py
 echo from flask import Flask >> run.py
 echo from src.app import app >> run.py
 echo debug_status = True >> run.py
+echo module_name = ^"%projectname%: %description%^" >>run.py
+echo author = ^"%author%^" >> run.py
+echo __version__ = ^"v0.0.0^" >> run.py
 echo if __name__ == '__main__': >> run.py
+echo print(f^"Welcome to {module_name}{__version__}^") >> run.py
+echo print(^"(c) %year% %author%. All Rights Reserved.^") run.py
 echo 	import logging >> run.py
 echo 	logging.basicConfig(filename='logs.log',level=logging.DEBUG) >> run.py
 echo 	if debug_status: >> run.py
@@ -81,7 +87,7 @@ echo parser.add_argument(^"--service^", ^"-s^", action=^"store^", type=str, requ
 echo args = parser.parse_args() >> zedgen.py
 echo if args.page != None: >> zedgen.py
 echo 	file = open(f^"src/controllers/{args.page}_controller.py^",'a') >> zedgen.py
-echo 	string = ^"from flask import Flask, render_template\n^" >> zedgen.py
+echo 	string = ^"from flask import render_template\n^" >> zedgen.py
 echo 	string += ^"from src.app import app\n^" >> zedgen.py
 echo 	string += f^"@app.route('/{args.page}')\n^"  >> zedgen.py 
 echo 	string += f^"def {args.page}():\n^" >> zedgen.py
@@ -135,7 +141,7 @@ echo creating __init__.py....
 echo # >> __init__.py
 echo __init__.py created
 echo creating %projectname%_controller.py....
-echo from flask import Flask, render_template >> %projectname%_controller.py
+echo from flask import render_template >> %projectname%_controller.py
 echo from src.app import app >> %projectname%_controller.py
 echo @app.route('/') >> %projectname%_controller.py
 echo @app.route('/%projectname%') >> %projectname%_controller.py
@@ -179,7 +185,7 @@ echo        ^</div^> >> index.html
 echo        ^<footer class=^"footer mt-auto py-3 bg-light text-center^" style=^"margin-top: 5%;^"^> >> index.html
 echo            ^<div class=^"container^"^> >> index.html
 echo                ^<span class=^"text-muted^"^> >> index.html
-echo                    ^&#9400; %year% %owner%. All Rights Reserved. >> index.html
+echo                    ^&#9400; %year% %author%. All Rights Reserved. >> index.html
 echo                ^</span^> >> index.html
 echo            ^</div^> >> index.html
 echo        ^</footer^> >> index.html

@@ -66,7 +66,7 @@ echo # Statement for enable the development environment >> config.py
 echo DEBUG = True # Turns on debugging features in Flask >> config.py
 echo # Define the database - we are working with >> config.py
 echo # MySql >> config.py
-echo # SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://[mysqluser]:[mysqlpass]@locahost/%projectname%' >> config.py
+echo # SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://[mysqluser]:[mysqlpass]@localhost/%projectname%' >> config.py
 echo # SQLALCHEMY_TRACK_MODIFICATIONS = False >> config.py
 echo SECRET_KEY = str(os.urandom(24).hex()) >> config.py
 echo config.py created

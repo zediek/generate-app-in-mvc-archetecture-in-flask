@@ -9,6 +9,8 @@ echo #               pip3 or pip not pip2 if not included in python3         #
 echo #               vertualenv in pip install                               #
 echo #               yarn to install bootstrap                               #
 echo #########################################################################
+echo Execute productivity music/video file
+tasklist | findstr "mpc-hc64.exe" || start "C:\Program Files\Combined Community Codec Pack 64bit\MPC\mpc-hc64.exe" "C:\xampp\htdocs\Video\Tony Stark's Workshop - Iron Man Music (One Hour) - YouTube.mkv"
 set /p projectname="Project Name>"
 set /p author="Author>"
 set year=%date:~6,4%
@@ -50,9 +52,9 @@ echo project_name = ^"%projectname%^" >>run.py
 echo author = ^"%author%^" >> run.py
 echo __version__ = ^"v0.0.0^" >> run.py
 echo if __name__ == '__main__': >> run.py
-echo 	print(f^"Welcome to {project_name}{__version__}^") >> run.py
-echo 	print(^"(c) %year% %author%. All Rights Reserved.^") run.py
-echo 	import logging >> run.py
+echo  	print(f^"Welcome to {project_name}{__version__}^") >> run.py
+echo  	print(^"(c) %year% %author%. All Rights Reserved.^") >> run.py
+echo  	import logging >> run.py
 echo 	logging.basicConfig(filename='logs.log',level=logging.DEBUG) >> run.py
 echo 	if debug_status: >> run.py
 echo 		app.run(host='0.0.0.0',debug=True) >> run.py

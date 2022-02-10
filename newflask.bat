@@ -50,8 +50,8 @@ echo project_name = ^"%projectname%^" >>run.py
 echo author = ^"%author%^" >> run.py
 echo __version__ = ^"v0.0.0^" >> run.py
 echo if __name__ == '__main__': >> run.py
-echo print(f^"Welcome to {project_name}{__version__}^") >> run.py
-echo print(^"(c) %year% %author%. All Rights Reserved.^") run.py
+echo 	print(f^"Welcome to {project_name}{__version__}^") >> run.py
+echo 	print(^"(c) %year% %author%. All Rights Reserved.^") run.py
 echo 	import logging >> run.py
 echo 	logging.basicConfig(filename='logs.log',level=logging.DEBUG) >> run.py
 echo 	if debug_status: >> run.py

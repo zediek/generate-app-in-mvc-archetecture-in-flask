@@ -9,8 +9,6 @@ echo #               pip3 or pip not pip2 if not included in python3         #
 echo #               vertualenv in pip install                               #
 echo #               yarn to install bootstrap                               #
 echo #########################################################################
-echo Execute productivity music/video file
-tasklist | findstr "mpc-hc64.exe" || start "C:\Program Files\Combined Community Codec Pack 64bit\MPC\mpc-hc64.exe" "C:\xampp\htdocs\Video\Tony Stark's Workshop - Iron Man Music (One Hour) - YouTube.mkv"
 set /p projectname="Project Name>"
 set /p author="Author>"
 set year=%date:~6,4%
